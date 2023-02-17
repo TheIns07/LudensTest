@@ -5,10 +5,8 @@ const prompt = require('prompt-sync')();
 
 medianaArray = (arrayMain, arraySecondary) => {
 
-    arrayMain = arrayMain.split(",").sort(function(a, b){return a - b})
-    arraySecondary = arraySecondary.split(",").sort(function(a, b){return a - b})
-    console.log(arrayMain)
-    console.log(arraySecondary)
+    arrayMain = arrayMain.split(",").sort((a, b) => {return a - b})
+    arraySecondary = arraySecondary.split(",").sort((a, b) => {return a - b})
 
     let arrayMainSupport = []
     let arraySecondarySupport = []
@@ -24,7 +22,7 @@ medianaArray = (arrayMain, arraySecondary) => {
     const concatedArrays = arrayMainSupport.concat(arraySecondarySupport)
 
     const lengths = concatedArrays.length;
-    const mitad = concatedArrays.length/2;
+    const mitad = Math.floor(concatedArrays.length/2);
 
     return lengths % 2 == 1 ? concatedArrays[mitad] : (concatedArrays[mitad - 1] + concatedArrays[mitad + 2]) / 2
 }
