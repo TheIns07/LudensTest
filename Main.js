@@ -1,7 +1,11 @@
 //array (int) => mediana del array 
 const prompt = require('prompt-sync')();
 
+const firstArray = prompt("Introduce los valores del primer arreglo. (Recuerda separar por comas)");
+const secondArray = prompt("Introduce los valores del segundo arreglo. (Recuerda separar por comas)");
 
+
+console.log(medianaArray(firstArray, secondArray));
 
 medianaArray = (arrayMain, arraySecondary) => {
 
@@ -27,9 +31,5 @@ medianaArray = (arrayMain, arraySecondary) => {
     return lengths % 2 == 1 ? concatedArrays[mitad] : (concatedArrays[mitad - 1] + concatedArrays[mitad + 2]) / 2
 }
 
-const firstArray = prompt("Introduce los valores del primer arreglo. (Recuerda separar por comas)");
-const secondArray = prompt("Introduce los valores del segundo arreglo. (Recuerda separar por comas)");
 
-
-console.log(medianaArray(firstArray, secondArray));
 
