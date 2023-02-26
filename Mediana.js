@@ -21,6 +21,7 @@ medianaArray = (arrayMain, arraySecondary) => {
     })
 
     const concatedArrays = arrayMainSupport.concat(arraySecondarySupport).sort((a, b) => {return a - b})
+    console.log(concatedArrays)
 
     const longitud = concatedArrays.length;
     const medio = Math.floor(concatedArrays.length/2)
