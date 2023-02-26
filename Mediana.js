@@ -4,13 +4,14 @@ const prompt = require('prompt-sync')();
 
 
 medianaArray = (arrayMain, arraySecondary) => {
+    //Convierte el array dado y lo ordena de menor a mayor
+    arrayMain = arrayMain.split(",")
+    arraySecondary = arraySecondary.split(",")
 
-    arrayMain = arrayMain.split(",").sort((a, b) => {return a - b})
-    arraySecondary = arraySecondary.split(",").sort((a, b) => {return a - b})
-
+    //Se crean array's auxiliares 
     let arrayMainSupport = []
     let arraySecondarySupport = []
-
+    
     arrayMain.forEach(e => {
       arrayMainSupport.push(parseInt(e))
     })
@@ -19,12 +20,17 @@ medianaArray = (arrayMain, arraySecondary) => {
         arraySecondarySupport.push(parseInt(e))
     })
 
-    const concatedArrays = arrayMainSupport.concat(arraySecondarySupport)
+    const concatedArrays = arrayMainSupport.concat(arraySecondarySupport).sort((a, b) => {return a - b})
 
-    const lengths = concatedArrays.length;
-    const mitad = Math.floor(concatedArrays.length/2);
+    const longitud = concatedArrays.length;
+    const medio = Math.floor(concatedArrays.length/2)
 
-    return lengths % 2 == 1 ? concatedArrays[mitad] : (concatedArrays[mitad - 1] + concatedArrays[mitad + 2]) / 2
+    if(longitud % 2 == 1){
+      return concatedArrays[medio]
+    } else {
+      return (concatedArrays[medio]+concatedArrays[medio-1])/2
+    }
+    
 }
 
 const firstArray = prompt("Introduce los valores del primer arreglo. (Recuerda separar por comas)");
