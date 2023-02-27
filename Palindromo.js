@@ -1,6 +1,11 @@
 function solution(inputString) {
-    return inputString = inputString.split('').join('')
+     let array = inputString.split('').reverse().join('')
+     if (array === inputString) {
+        return true
+     }  else{ 
+        return false
+    }
 }
 
 
-console.log(solution("12323242"))
+console.log(solution("aabaa"))
